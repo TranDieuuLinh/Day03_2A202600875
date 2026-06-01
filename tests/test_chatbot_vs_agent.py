@@ -15,8 +15,8 @@ def run_comparison():
     # Khởi tạo Provider
     try:
         from src.core.openai_provider import OpenAIProvider
-        llm = OpenAIProvider(model_name="deepseek-v4-flash")
-        print("Using OpenAI Provider (Custom Endpoint)\n" + "-"*30)
+        llm = OpenAIProvider.from_env()
+        print("Using OpenAI Provider (OpenRouter / custom base URL)\n" + "-"*30)
     except Exception as e:
         print(f"Không thể khởi tạo Provider. Vui lòng kiểm tra lại cấu hình .env! {e}")
         sys.exit(1)

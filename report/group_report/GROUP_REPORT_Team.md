@@ -1,7 +1,7 @@
 # Group Report: Lab 3 - Production-Grade Agentic System
 
 - **Team Name**: Team League of Mini Demons
-- **Team Members**: Đỗ Quốc An, Nguyễn Khánh Linh, Trần Khánh Linh, Thân Tuệ Minh
+- **Team Members**: Đỗ Quốc An, Trần Diệu Linh, Nguyễn Khánh Linh, Thân Minh Hiếu
 - **Deployment Date**: 2026-06-01
 
 ---

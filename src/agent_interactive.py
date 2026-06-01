@@ -14,7 +14,7 @@ if __name__ == "__main__":
     # Khởi tạo Provider
     try:
         from src.core.openai_provider import OpenAIProvider
-        llm = OpenAIProvider(model_name="deepseek-v4-flash")
+        llm = OpenAIProvider.from_env()
     except Exception as e:
         print(f"Không thể khởi tạo Provider. Kiểm tra lại .env: {e}")
         sys.exit(1)

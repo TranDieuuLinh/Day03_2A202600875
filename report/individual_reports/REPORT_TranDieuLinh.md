@@ -1,7 +1,7 @@
 # Individual Report: Lab 3 - Chatbot vs ReAct Agent
 
-- **Student Name**: Đỗ Quốc An
-- **Student ID**: 2A202600952
+- **Student Name**: Trần Diệu Linh
+- **Student ID**: 2A202600875
 - **Date**: 01/06/2026
 
 ---
@@ -12,9 +12,6 @@
 
 - **Modules Implemented**: 
   - `src/agent/agent.py`: Hoàn thiện ReAct Agent loop (v2) với khả năng tự động dọn dẹp chuỗi JSON bị lỗi (loại bỏ markdown backticks) và cơ chế Try-Catch bắt lỗi `JSONDecodeError`.
-  - `src/telemetry/metrics.py`: Cập nhật logic tính toán điểm thưởng (Bonus metrics), tự động quy đổi token ra chi phí USD (`estimated_cost_usd`) và `tokens_per_step`.
-  - `src/core/openai_provider.py`: Cấu hình LLM Provider linh hoạt để gọi API custom của DeepSeek-v4-flash thông qua OpenAI SDK thay vì bị giới hạn ở Gemini/OpenAI mặc định.
-  - `src/chatbot.py` & Scripts: Xây dựng chế độ Interactive Terminal (Chat trực tiếp) cho Chatbot và Agent.
 - **Code Highlights**:
   Đoạn code bắt lỗi JSON trong `agent.py`:
   `clean_args = args.strip(" \n'\"`")`

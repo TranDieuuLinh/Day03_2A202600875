@@ -39,9 +39,12 @@ class MetricsAnalyzer:
             "average_latency_ms": round(total_latency / llm_calls, 2) if llm_calls > 0 else 0,
             "total_tokens_consumed": total_tokens,
             "total_agent_steps": agent_steps,
-            # Ước tính chi phí dựa trên giá DeepSeek-v4-flash (~$0.15 cho 1 triệu token)
-            # (Có thể điều chỉnh tỷ giá này theo mô hình bạn dùng)
-            "estimated_cost_usd": round((total_tokens / 1_000_000) * 0.15, 6),
+            # Rough cost estimate; override with COST_PER_MILLION_TOKENS in .env
+            "estimated_cost_usd": round(
+                (total_tokens / 1_000_000)
+                * float(os.getenv("COST_PER_MILLION_TOKENS", "0.15")),
+                6,
+            ),
             # Tỷ lệ: số token tiêu thụ trung bình mỗi bước suy luận của Agent
             "tokens_per_step": round(total_tokens / agent_steps, 0) if agent_steps > 0 else 0
         }

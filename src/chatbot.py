@@ -1,3 +1,10 @@
+import os
+import sys
+
+_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+if _ROOT not in sys.path:
+    sys.path.insert(0, _ROOT)
+
 from src.core.llm_provider import LLMProvider
 from src.telemetry.logger import logger
 
@@ -26,18 +33,12 @@ class SimpleChatbot:
         return response_content
 
 if __name__ == "__main__":
-    import os
-    import sys
-    
-    # Thêm đường dẫn gốc vào sys.path để chạy trực tiếp không bị lỗi import
-    sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-    
     from dotenv import load_dotenv
     load_dotenv()
     
     from src.core.openai_provider import OpenAIProvider
 
-    llm_provider = OpenAIProvider(model_name="deepseek-v4-flash")
+    llm_provider = OpenAIProvider.from_env()
             
     chatbot = SimpleChatbot(llm=llm_provider)
     
